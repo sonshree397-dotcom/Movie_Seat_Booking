@@ -1,0 +1,73 @@
+export const movieData = [
+  {
+    row: "A",
+    type: "vip",
+    seats: [
+      { id: "A1", isReserved: false },
+      { id: "A2", isReserved: false },
+      { id: "A3", isReserved: true },
+      { id: "A4", isReserved: true },
+      { id: "A5", isReserved: false },
+      { id: "A6", isReserved: false },
+      { id: "A7", isReserved: false },
+      { id: "A8", isReserved: false },
+    ],
+  },
+  {
+    row: "B",
+    type: "vip",
+    seats: [
+      { id: "B1", isReserved: false },
+      { id: "B2", isReserved: false },
+      { id: "B3", isReserved: false },
+      { id: "B4", isReserved: false },
+      { id: "B5", isReserved: false },
+      { id: "B6", isReserved: false },
+      { id: "B7", isReserved: true },
+      { id: "B8", isReserved: true },
+    ],
+  },
+  {
+    row: "C",
+    type: "standard",
+    seats: [
+      { id: "C1", isReserved: false },
+      { id: "C2", isReserved: false },
+      { id: "C3", isReserved: false },
+      { id: "C4", isReserved: true },
+      { id: "C5", isReserved: true },
+      { id: "C6", isReserved: true },
+      { id: "C7", isReserved: false },
+      { id: "C8", isReserved: false },
+    ],
+  },
+  {
+    row: "D",
+    type: "standard",
+    seats: [
+      { id: "D1", isReserved: false },
+      { id: "D2", isReserved: false },
+      { id: "D3", isReserved: false },
+      { id: "D4", isReserved: false },
+      { id: "D5", isReserved: false },
+      { id: "D6", isReserved: false },
+      { id: "D7", isReserved: false },
+      { id: "D8", isReserved: false },
+      
+    ],
+  },
+  {
+    row: "E",
+    type: "standard",
+    seats: [
+      { id: "E1", isReserved: false },
+      { id: "E2", isReserved: true },
+      { id: "E3", isReserved: true },
+      { id: "E4", isReserved: false },
+      { id: "E5", isReserved: false },
+      { id: "E6", isReserved: false },
+      { id: "E7", isReserved: false },
+      { id: "E8", isReserved: false },
+    ],
+  },
+];
