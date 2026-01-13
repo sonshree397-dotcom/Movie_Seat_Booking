@@ -1,11 +1,9 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { USERS_KEY, LOGIN_KEY, USERNAME_KEY } from "../../constants/authConstants";
 
 const AuthContext = createContext();
-
-const USERS_KEY = "users";
-const LOGIN_KEY = "isLoggedIn";
-const USERNAME_KEY = "username";
 
 export function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -13,8 +11,10 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     if (localStorage.getItem(LOGIN_KEY) === "true") {
-      setIsLoggedIn(true);
-      setUsername(localStorage.getItem(USERNAME_KEY));
+      setTimeout(() => {
+        setIsLoggedIn(true);
+        setUsername(localStorage.getItem(USERNAME_KEY));
+      }, 0);
     }
   }, []);
 
@@ -39,8 +39,10 @@ export function AuthProvider({ children }) {
     }
     localStorage.setItem(LOGIN_KEY, "true");
     localStorage.setItem(USERNAME_KEY, u);
-    setIsLoggedIn(true);
-    setUsername(u);
+    setTimeout(() => {
+      setIsLoggedIn(true);
+      setUsername(u);
+    }, 0);
     toast.success("Login successful");
     return true;
   };
@@ -48,8 +50,10 @@ export function AuthProvider({ children }) {
   const logout = () => {
     localStorage.removeItem(LOGIN_KEY);
     localStorage.removeItem(USERNAME_KEY);
-    setIsLoggedIn(false);
-    setUsername("");
+    setTimeout(() => {
+      setIsLoggedIn(false);
+      setUsername("");
+    }, 0);
     toast.info("Logged out");
   };
 
@@ -61,3 +65,7 @@ export function AuthProvider({ children }) {
 }
 
 export const useAuth = () => useContext(AuthContext);
+
+export default function AuthProviderWrapper({ children }) {
+  return <AuthProvider>{children}</AuthProvider>;
+}
